@@ -325,7 +325,8 @@
             <p>📱 (+229) 01 50 36 91 13</p>
             <p style="margin-top:1rem">LinkedIn: <a href="https://www.linkedin.com/in/sylv%C3%A8re-kinox-kouffossi-059951340" target="_blank">Sylvère Kinox KOUFFOSSI</a></p>
           </div>
-          <form id="contactForm" action="https://formspree.io/f/f/sylkinko@gmail.com" method="POST">
+          <form id="contactForm" name="contact" netlify>
+            <input type="hidden" name="form-name" value="contact" />
             <input type="text" name="name" placeholder="Votre nom" required />
             <input type="email" name="email" placeholder="Votre email" required />
             <textarea name="message" placeholder="Message" required></textarea>
