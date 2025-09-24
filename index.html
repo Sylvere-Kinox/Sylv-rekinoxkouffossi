@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sylvère Kinox KOUFFOSSI — Portfolio</title>
+  <meta name="description" content="Portfolio de Sylvère Kinox KOUFFOSSI — Systèmes Embarqués, IoT, Développement Web" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Urbanist:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-dark: #0A0A0A;
+      --text-light: #FFFFFF;
+      --text-muted: #B0B0B0;
+      --accent: #00FFFF;
+      --card-bg: #111111;
+      --border-color: rgba(255, 255, 255, 0.1);
+      --radius: 24px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+    }
+    a { text-decoration: none; color: var(--accent); transition: color 0.3s ease; }
+    a:hover { color: var(--text-light); }
+    
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* Header */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(8px);
+    }
+    .brand { font-family: 'Urbanist', sans-serif; font-weight: 900; font-size: 1.8rem; }
+    .brand span { color: var(--accent); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      border-radius: 12px;
+      border: none;
+      background: var(--accent);
+      color: var(--bg-dark);
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .btn:hover { transform: translateY(-3px); background-color: var(--text-light); }
+    .btn.secondary { background: none; color: var(--accent); border: 1px solid var(--accent); }
+    .btn.secondary:hover { background: var(--accent); color: var(--bg-dark); }
+    
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+      padding: 6rem 0 4rem;
+    }
+    @media(min-width: 900px) { .hero { grid-template-columns: 1fr 480px; } }
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .hero-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+      margin-bottom: 1.5rem;
+    }
+    .kicker { font-size: 0.75rem; text-transform: uppercase; color: var(--accent); letter-spacing: 2px; }
+    h1 {
+      font-family: 'Urbanist', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      margin: 0.5rem 0 0.5rem;
+      line-height: 1.1;
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+    }
+    .lead { color: var(--text-muted); margin: 0 0 1.5rem; font-size: 1.25rem; }
+
+    /* Cards & Sections */
+    section { padding: 4rem 0; }
+    h2 { font-family: 'Urbanist', sans-serif; font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 1.5rem; text-align: center; }
+    .card {
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border-color);
+    }
+    .signature-card { padding: 2.5rem; }
+    .signature-card ul { list-style: none; padding-left: 0; margin: 1rem 0 0; }
+    .signature-card li { margin-bottom: 0.5rem; color: var(--text-muted); }
+
+    /* Projects Grid */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+    .project {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      transition: all 0.4s ease;
+      cursor: pointer;
+      padding: 2rem;
+      box-shadow: 0 0 0 transparent;
+    }
+    .project:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+      transform: translateY(-8px);
+    }
+    .project h3 { font-family: 'Urbanist', sans-serif; font-size: 1.5rem; margin: 0 0 0.5rem; }
+    .pcontent { padding: 0; }
+    .tech-icons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .tech-icon {
+      font-size: 1.5rem;
+      color: var(--text-light);
+      opacity: 0.7;
+      transition: opacity 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    }
+    .tech-icon:hover {
+      opacity: 1;
+      color: var(--accent);
+      transform: scale(1.1);
+    }
+    .tech-icon.python { color: #306998; }
+    .tech-icon.arduino { color: #00979D; }
+    .tech-icon.nodejs { color: #68A063; }
+    .tech-icon.sql { color: #F29111; }
+
+    /* Skills */
+    .skills-list { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .skill {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 0.75rem 1.25rem;
+      border-radius: 12px;
+      font-weight: 600;
+      color: var(--text-light);
+      font-size: 0.875rem;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+    .skill:hover {
+      background: var(--accent);
+      color: var(--bg-dark);
+      border-color: var(--accent);
+    }
+
+    /* Contact */
+    .contact-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+    @media(min-width: 760px) { .contact-grid { grid-template-columns: 1fr 360px; } }
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      background: transparent;
+      color: var(--text-light);
+      margin-top: 0.5rem;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    }
+
+    /* Footer */
+    footer { padding: 2rem 0; text-align: center; color: var(--text-muted); font-size: 0.875rem; }
+
+    /* Reveal animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <div>
+        <div class="brand">Sylvère K.<span>KOUFFOSSI</span></div>
+        <div class="text-muted" style="font-size:13px">Embedded Systems • IoT • Web</div>
+      </div>
+      <div class="top-actions">
+        <a class="btn" href="Professional Modern CV english version.pdf" download>Télécharger CV</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <img src="IMG_4125.JPG" alt="Photo de profil de Sylvère" class="hero-photo">
+          <div class="kicker">Étudiant • Entrepreneur • Créateur</div>
+          <h1>L'ingénierie qui résout des problèmes concrets. Je donne vie à vos idées tech.</h1>
+          <p class="lead">Étudiant en Licence Systèmes Embarqués & IoT (ESG, Bénin). 1ère année validée avec <strong>Mention Bien</strong>. Fondateur d'<a href="https://agencewebcreative.netlify.app" target="_blank">Agence Web Creative</a>.</p>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem">
+            <a class="btn" href="Professional Modern CV english version.pdf" download>Télécharger mon CV</a>
+            <a class="btn secondary" href="#projects">Voir mes projets</a>
+          </div>
+          <p class="muted" style="margin-top:2rem;font-size:14px">📍 Abomey-Calavi, Bénin • ✉️ <a href="mailto:sylkinko@gmail.com">sylkinko@gmail.com</a> • 📞 (+229) 01 50 36 91 13</p>
+        </div>
+        <aside class="card reveal" style="align-self:start">
+          <h3>Projets phares</h3>
+          <ul style="margin-top:1rem;color:var(--text-muted);padding-left:18px">
+            <li>Flexible & Intelligent GPS — suivi IoT en temps réel</li>
+            <li>Agence Web Creative — sites et e-commerce pour PMEs</li>
+            <li>Ride-Sharing App — backend & API (projet de groupe)</li>
+          </ul>
+          <p style="margin-top:1.5rem"><a href="#projects">Découvrir tous les projets →</a></p>
+        </aside>
+      </section>
+
+      <section id="about" class="reveal">
+        <h2>À Propos de Moi</h2>
+        <div class="card">
+          <p><strong>Qui je suis</strong> — Je suis <strong>Sylvère Kinox KOUFFOSSI</strong>, un étudiant béninois passionné par les systèmes embarqués et l'IoT. Mon objectif est de construire des solutions pratiques qui répondent aux besoins locaux et d'améliorer la vie quotidienne grâce à la technologie.</p>
+          <p style="margin-top:1rem"><strong>Éducation</strong> — Je suis en 2ème année de Licence en Systèmes Embarqués & IoT à l'ESG, après avoir validé ma première année avec une <strong>Mention Bien</strong>. En parallèle, je développe mes compétences en communication et en écriture en poursuivant une 2ème année à la Faculté d'Anglais, un atout pour les collaborations internationales.</p>
+          <p style="margin-top:1rem"><strong>Autres intérêts</strong> — En tant que fondateur d'<a class="under" href="https://agencewebcreative.netlify.app" target="_blank">Agence Web Creative</a>, je combine ma passion pour la technologie et l'entrepreneuriat en aidant les petites entreprises à s'épanouir en ligne. Je suis toujours à l'affût de défis qui me permettent d'innover et de faire une différence.</p>
+        </div>
+      </section>
+
+      <section id="projects" class="reveal">
+        <h2>Mes Réalisations</h2>
+        <div class="grid">
+          <article class="project reveal">
+            <div class="pcontent">
+              <h3>Agence Web Creative</h3>
+              <p class="muted">Fondateur & Directeur — 2024 – Présent</p>
+              <p>Agence numérique spécialisée dans la création de sites web modernes pour PMEs. J'ai accompagné plusieurs entreprises à renforcer leur présence en ligne et à générer de nouveaux leads. .</p>
+              <div class="tech-icons">
+                <i class="fab fa-js tech-icon" title="JavaScript"></i>
+                <i class="fab fa-html5 tech-icon" title="HTML5"></i>
+                <i class="fab fa-css3-alt tech-icon" title="CSS3"></i>
+                <i class="fab fa-react tech-icon" title="React"></i>
+              </div>
+            </div>
+          </article>
+          <article class="project reveal">
+            <div class="pcontent">
+              <h3>Flexible & Intelligent GPS</h3>
+              <p class="muted">Développeur IoT — 2024 – Présent</p>
+              <p>Système IoT avancé pour le suivi d'actifs en temps réel. Le système utilise des algorithmes intelligents pour minimiser les alertes inutiles et optimiser l'autonomie et l'utilisation de données.</p>
+              <div class="tech-icons">
+                <i class="fab fa-python tech-icon python" title="Python"></i>
+                <i class="fas fa-microchip tech-icon" title="ESP32/Microcontrôleurs"></i>
+                <i class="fas fa-satellite-dish tech-icon" title="GPS/IoT"></i>
+              </div>
+            </div>
+          </article>
+          <article class="project reveal">
+            <div class="pcontent">
+              <h3>Ride-Sharing App (Projet de groupe)</h3>
+              <p class="muted">Développeur Backend — 2024</p>
+              <p>Projet académique d'une application de covoiturage. J'ai conçu la base de données et développé les endpoints API pour la gestion des utilisateurs, des trajets et les règles de mise en relation.</p>
+              <div class="tech-icons">
+                <i class="fab fa-node-js tech-icon" title="Node.js"></i>
+                <i class="fas fa-database tech-icon" title="SQL/MySQL"></i>
+                <i class="fas fa-code tech-icon" title="API REST"></i>
+                <i class="fas fa-user-friends tech-icon" title="Travail d'équipe"></i>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="reveal">
+        <h2>Mes Compétences</h2>
+        <div class="card">
+          <div class="skills-list">
+            <span class="skill">C / C++</span>
+            <span class="skill">Python</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">HTML / CSS</span>
+            <span class="skill">SQL (MySQL)</span>
+            <span class="skill">Arduino / ESP32</span>
+            <span class="skill">IoT</span>
+            <span class="skill">Microcontrôleurs</span>
+            <span class="skill">Git & GitHub</span>
+            <span class="skill">API REST</span>
+            <span class="skill">Linux</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="reveal">
+        <h2>Contact</h2>
+        <div class="card contact-grid">
+          <div>
+            <p class="muted">Je suis toujours ouvert aux opportunités d'apprentissage, aux stages et aux collaborations. N'hésitez pas à me contacter si vous avez une idée de projet ou une offre d'emploi.</p>
+            <p style="margin-top:1.5rem">✉️ <a href="mailto:sylkinko@gmail.com">sylkinko@gmail.com</a></p>
+            <p>📱 (+229) 01 50 36 91 13</p>
+            <p style="margin-top:1rem">LinkedIn: <a href="https://www.linkedin.com/in/sylv%C3%A8re-kinox-kouffossi-059951340" target="_blank">Sylvère Kinox KOUFFOSSI</a></p>
+          </div>
+          <form id="contactForm" action="https://formspree.io/f/f/votre-adresse-email@example.com" method="POST">
+            <input type="text" name="name" placeholder="Votre nom" required />
+            <input type="email" name="email" placeholder="Votre email" required />
+            <textarea name="message" placeholder="Message" required></textarea>
+            <div style="margin-top:1rem;display:flex;gap:0.5rem">
+              <button type="submit" class="btn">Envoyer</button>
+              <button type="button" id="clearForm" class="btn secondary">Effacer</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Sylvère Kinox KOUFFOSSI — Tous droits réservés.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // IntersectionObserver for reveal animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Clear form function
+    document.getElementById('clearForm').addEventListener('click', () => {
+      document.getElementById('contactForm').reset();
+    });
+  </script>
+</body>
+</html>
