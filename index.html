@@ -6,13 +6,10 @@
   <title>Sylvère Kinox KOUFFOSSI — Portfolio</title>
   <meta name="description" content="Portfolio de Sylvère Kinox KOUFFOSSI — Systèmes Embarqués, IoT, Développement Web" />
   <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Urbanist:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
   <style>
     :root {
       --bg-dark: #0A0A0A;
@@ -30,18 +27,13 @@
       margin: 0;
       background-color: var(--bg-dark);
       color: var(--text-light);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
       line-height: 1.6;
       display: flex;
       flex-direction: column;
     }
     a { text-decoration: none; color: var(--accent); transition: color 0.3s ease; }
     a:hover { color: var(--text-light); }
-    
     .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-
-    /* Header */
     header {
       display: flex;
       align-items: center;
@@ -71,8 +63,6 @@
     .btn:hover { transform: translateY(-3px); background-color: var(--text-light); }
     .btn.secondary { background: none; color: var(--accent); border: 1px solid var(--accent); }
     .btn.secondary:hover { background: var(--accent); color: var(--bg-dark); }
-    
-    /* Hero */
     .hero {
       display: grid;
       grid-template-columns: 1fr;
@@ -103,8 +93,6 @@
       text-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
     }
     .lead { color: var(--text-muted); margin: 0 0 1.5rem; font-size: 1.25rem; }
-
-    /* Cards & Sections */
     section { padding: 4rem 0; }
     h2 { font-family: 'Urbanist', sans-serif; font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 1.5rem; text-align: center; }
     .card {
@@ -113,11 +101,6 @@
       border-radius: var(--radius);
       border: 1px solid var(--border-color);
     }
-    .signature-card { padding: 2.5rem; }
-    .signature-card ul { list-style: none; padding-left: 0; margin: 1rem 0 0; }
-    .signature-card li { margin-bottom: 0.5rem; color: var(--text-muted); }
-
-    /* Projects Grid */
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
     .project {
       position: relative;
@@ -158,8 +141,6 @@
     .tech-icon.arduino { color: #00979D; }
     .tech-icon.nodejs { color: #68A063; }
     .tech-icon.sql { color: #F29111; }
-
-    /* Skills */
     .skills-list { display: flex; flex-wrap: wrap; gap: 1rem; }
     .skill {
       background: var(--card-bg);
@@ -170,14 +151,15 @@
       color: var(--text-light);
       font-size: 0.875rem;
       transition: background 0.3s ease, border-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
     .skill:hover {
       background: var(--accent);
       color: var(--bg-dark);
       border-color: var(--accent);
     }
-
-    /* Contact */
     .contact-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
     @media(min-width: 760px) { .contact-grid { grid-template-columns: 1fr 360px; } }
     input, textarea {
@@ -194,73 +176,101 @@
       border-color: var(--accent);
       box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
     }
-
-    /* Footer */
     footer { padding: 2rem 0; text-align: center; color: var(--text-muted); font-size: 0.875rem; }
-
-    /* Reveal animations */
     .reveal {
       opacity: 0;
       transform: translateY(30px);
       transition: opacity 0.8s ease, transform 0.8s ease;
     }
     .reveal.visible { opacity: 1; transform: none; }
+    .icon { margin-right: 0.5rem; }
   </style>
 </head>
 <body>
   <div class="container">
-
     <header>
       <div>
         <div class="brand">Sylvère K.<span>KOUFFOSSI</span></div>
-        <div class="text-muted" style="font-size:13px">Embedded Systems • IoT • Web</div>
+        <div class="text-muted" style="font-size:13px">
+          <i class="fas fa-microchip icon"></i>Embedded Systems 
+          <i class="fas fa-satellite icon"></i>IoT 
+          <i class="fas fa-code icon"></i>Web
+        </div>
       </div>
       <div class="top-actions">
-        <a class="btn" href="Professional Modern CV english version.pdf" download>Télécharger CV</a>
+        <a class="btn" href="Professional Modern CV english version.pdf" download>
+          <i class="fas fa-download"></i>Télécharger CV
+        </a>
       </div>
     </header>
-
     <main>
       <section class="hero">
         <div class="hero-content">
           <img src="IMG_4125.JPG" alt="Photo de profil de Sylvère" class="hero-photo">
-          <div class="kicker">Étudiant • Entrepreneur • Créateur</div>
-          <h1>L'ingénierie qui résout des problèmes concrets. Je donne vie à vos idées tech.</h1>
-          <p class="lead">Étudiant en Licence Systèmes Embarqués & IoT (ESG, Bénin). 1ère année validée avec <strong>Mention Bien</strong>. Fondateur d'<a href="https://agencewebcreative.netlify.app" target="_blank">Agence Web Creative</a>.</p>
-          <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem">
-            <a class="btn" href="Professional Modern CV english version.pdf" download>Télécharger mon CV</a>
-            <a class="btn secondary" href="#projects">Voir mes projets</a>
+          <div class="kicker">
+            <i class="fas fa-user-graduate icon"></i>Étudiant 
+            <i class="fas fa-lightbulb icon"></i>Entrepreneur 
+            <i class="fas fa-pen-nib icon"></i>Créateur
           </div>
-          <p class="muted" style="margin-top:2rem;font-size:14px">📍 Abomey-Calavi, Bénin • ✉️ <a href="mailto:sylkinko@gmail.com">sylkinko@gmail.com</a> • 📞 (+229) 01 50 36 91 13</p>
+          <h1>
+            <i class="fas fa-cogs icon"></i>L'ingénierie qui résout des problèmes concrets.<br>
+            <i class="fas fa-rocket icon"></i>Je donne vie à vos idées tech.
+          </h1>
+          <p class="lead">
+            <i class="fas fa-graduation-cap icon"></i>Étudiant en Licence Systèmes Embarqués & IoT (IFRI, Bénin). 1ère année validée avec <strong>Mention Bien</strong>.<br>
+            <i class="fas fa-building icon"></i>Fondateur d'<a href="https://agencewebcreative.netlify.app" target="_blank">Agence Web Creative</a>.
+          </p>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem">
+            <a class="btn" href="Professional Modern CV english version.pdf" download>
+              <i class="fas fa-file-alt"></i>Télécharger mon CV
+            </a>
+            <a class="btn secondary" href="#projects">
+              <i class="fas fa-folder-open"></i>Voir mes projets
+            </a>
+          </div>
+          <p class="muted" style="margin-top:2rem;font-size:14px">
+            <i class="fas fa-map-marker-alt icon"></i>Abomey-Calavi, Bénin 
+            <i class="fas fa-envelope icon"></i><a href="mailto:sylkinko@gmail.com">sylkinko@gmail.com</a> 
+            <i class="fas fa-phone icon"></i>(+229) 01 50 36 91 13
+          </p>
         </div>
         <aside class="card reveal" style="align-self:start">
-          <h3>Projets phares</h3>
+          <h3><i class="fas fa-star icon"></i>Projets phares</h3>
           <ul style="margin-top:1rem;color:var(--text-muted);padding-left:18px">
-            <li>Flexible & Intelligent GPS — suivi IoT en temps réel</li>
-            <li>Agence Web Creative — sites et e-commerce pour PMEs</li>
-            <li>Ride-Sharing App — backend & API (projet de groupe)</li>
+            <li><i class="fas fa-map-marker-alt icon"></i>Flexible & Intelligent GPS — suivi IoT en temps réel</li>
+            <li><i class="fas fa-globe icon"></i>Agence Web Creative — sites et e-commerce pour PMEs</li>
+            <li><i class="fas fa-car-side icon"></i>Ride-Sharing App — backend & API (projet de groupe)</li>
           </ul>
-          <p style="margin-top:1.5rem"><a href="#projects">Découvrir tous les projets →</a></p>
+          <p style="margin-top:1.5rem"><a href="#projects"><i class="fas fa-arrow-right"></i>Découvrir tous les projets</a></p>
         </aside>
       </section>
-
       <section id="about" class="reveal">
-        <h2>À Propos de Moi</h2>
+        <h2><i class="fas fa-user icon"></i>À Propos de Moi</h2>
         <div class="card">
-          <p><strong>Qui je suis</strong> — Je suis <strong>Sylvère Kinox KOUFFOSSI</strong>, un étudiant béninois passionné par les systèmes embarqués et l'IoT. Mon objectif est de construire des solutions pratiques qui répondent aux besoins locaux et d'améliorer la vie quotidienne grâce à la technologie.</p>
-          <p style="margin-top:1rem"><strong>Éducation</strong> — Je suis en 2ème année de Licence en Systèmes Embarqués & IoT à l'ESG, après avoir validé ma première année avec une <strong>Mention Bien</strong>. En parallèle, je développe mes compétences en communication et en écriture en poursuivant une 2ème année à la Faculté d'Anglais, un atout pour les collaborations internationales.</p>
-          <p style="margin-top:1rem"><strong>Autres intérêts</strong> — En tant que fondateur d'<a class="under" href="https://agencewebcreative.netlify.app" target="_blank">Agence Web Creative</a>, je combine ma passion pour la technologie et l'entrepreneuriat en aidant les petites entreprises à s'épanouir en ligne. Je suis toujours à l'affût de défis qui me permettent d'innover et de faire une différence.</p>
+          <p>
+            <strong>Qui je suis</strong> — <i class="fas fa-user icon"></i>
+            Je suis <strong>Sylvère Kinox KOUFFOSSI</strong>, un étudiant béninois passionné par les systèmes embarqués et l'IoT. Mon objectif est de construire des solutions pratiques qui répondent aux besoins locaux et d'améliorer la vie quotidienne grâce à la technologie.
+          </p>
+          <p style="margin-top:1rem">
+            <strong>Éducation</strong> — <i class="fas fa-graduation-cap icon"></i>
+            Je suis en 2ème année de Licence en Systèmes Embarqués & IoT à l'IFRI, après avoir validé ma première année avec une <strong>Mention Bien</strong>. En parallèle, je développe mes compétences en communication et en écriture en poursuivant une 2ème année à la Faculté d'Anglais, un atout pour les collaborations internationales.
+          </p>
+          <p style="margin-top:1rem">
+            <strong>Autres intérêts</strong> — <i class="fas fa-lightbulb icon"></i>
+            En tant que fondateur d'<a class="under" href="https://agencewebcreative.netlify.app" target="_blank">Agence Web Creative</a>, je combine ma passion pour la technologie et l'entrepreneuriat en aidant les petites entreprises à s'épanouir en ligne. Je suis toujours à l'affût de défis qui me permettent d'innover et de faire une différence.
+          </p>
         </div>
       </section>
-
       <section id="projects" class="reveal">
-        <h2>Mes Réalisations</h2>
+        <h2><i class="fas fa-folder-open icon"></i>Mes Réalisations</h2>
         <div class="grid">
           <article class="project reveal">
             <div class="pcontent">
-              <h3>Agence Web Creative</h3>
-              <p class="muted">Fondateur & Directeur — 2024 – Présent</p>
-              <p>Agence numérique spécialisée dans la création de sites web modernes pour PMEs. J'ai accompagné plusieurs entreprises à renforcer leur présence en ligne et à générer de nouveaux leads. .</p>
+              <h3><i class="fas fa-globe icon"></i>Agence Web Creative</h3>
+              <p class="muted"><i class="fas fa-user-tie icon"></i>Fondateur & Directeur — 2024 – Présent</p>
+              <p>
+                <i class="fas fa-laptop-code icon"></i>Agence numérique spécialisée dans la création de sites web modernes pour PMEs. J'ai accompagné plusieurs entreprises à renforcer leur présence en ligne et à générer de nouveaux leads.
+              </p>
               <div class="tech-icons">
                 <i class="fab fa-js tech-icon" title="JavaScript"></i>
                 <i class="fab fa-html5 tech-icon" title="HTML5"></i>
@@ -271,9 +281,11 @@
           </article>
           <article class="project reveal">
             <div class="pcontent">
-              <h3>Flexible & Intelligent GPS</h3>
-              <p class="muted">Développeur IoT — 2024 – Présent</p>
-              <p>Système IoT avancé pour le suivi d'actifs en temps réel. Le système utilise des algorithmes intelligents pour minimiser les alertes inutiles et optimiser l'autonomie et l'utilisation de données.</p>
+              <h3><i class="fas fa-map-marker-alt icon"></i>Flexible & Intelligent GPS</h3>
+              <p class="muted"><i class="fas fa-microchip icon"></i>Développeur IoT — 2024 – Présent</p>
+              <p>
+                <i class="fas fa-satellite-dish icon"></i>Système IoT avancé pour le suivi d'actifs en temps réel. Le système utilise des algorithmes intelligents pour minimiser les alertes inutiles et optimiser l'autonomie et l'utilisation de données.
+              </p>
               <div class="tech-icons">
                 <i class="fab fa-python tech-icon python" title="Python"></i>
                 <i class="fas fa-microchip tech-icon" title="ESP32/Microcontrôleurs"></i>
@@ -283,9 +295,11 @@
           </article>
           <article class="project reveal">
             <div class="pcontent">
-              <h3>Ride-Sharing App (Projet de groupe)</h3>
-              <p class="muted">Développeur Backend — 2024</p>
-              <p>Projet académique d'une application de covoiturage. J'ai conçu la base de données et développé les endpoints API pour la gestion des utilisateurs, des trajets et les règles de mise en relation.</p>
+              <h3><i class="fas fa-car-side icon"></i>Ride-Sharing App (Projet de groupe)</h3>
+              <p class="muted"><i class="fas fa-server icon"></i>Développeur Backend — 2024</p>
+              <p>
+                <i class="fas fa-users icon"></i>Projet académique d'une application de covoiturage. J'ai conçu la base de données et développé les endpoints API pour la gestion des utilisateurs, des trajets et les règles de mise en relation.
+              </p>
               <div class="tech-icons">
                 <i class="fab fa-node-js tech-icon" title="Node.js"></i>
                 <i class="fas fa-database tech-icon" title="SQL/MySQL"></i>
@@ -296,34 +310,40 @@
           </article>
         </div>
       </section>
-
       <section id="skills" class="reveal">
-        <h2>Mes Compétences</h2>
+        <h2><i class="fas fa-tools icon"></i>Mes Compétences</h2>
         <div class="card">
           <div class="skills-list">
-            <span class="skill">C / C++</span>
-            <span class="skill">Python</span>
-            <span class="skill">JavaScript</span>
-            <span class="skill">HTML / CSS</span>
-            <span class="skill">SQL (MySQL)</span>
-            <span class="skill">Arduino / ESP32</span>
-            <span class="skill">IoT</span>
-            <span class="skill">Microcontrôleurs</span>
-            <span class="skill">Git & GitHub</span>
-            <span class="skill">API REST</span>
-            <span class="skill">Linux</span>
+            <span class="skill"><i class="fas fa-code"></i>C / C++</span>
+            <span class="skill"><i class="fab fa-python"></i>Python</span>
+            <span class="skill"><i class="fab fa-js"></i>JavaScript</span>
+            <span class="skill"><i class="fab fa-html5"></i>HTML / CSS</span>
+            <span class="skill"><i class="fas fa-database"></i>SQL (MySQL)</span>
+            <span class="skill"><i class="fas fa-microchip"></i>Arduino / ESP32</span>
+            <span class="skill"><i class="fas fa-satellite"></i>IoT</span>
+            <span class="skill"><i class="fas fa-microchip"></i>Microcontrôleurs</span>
+            <span class="skill"><i class="fab fa-git-alt"></i>Git & GitHub</span>
+            <span class="skill"><i class="fas fa-code"></i>API REST</span>
+            <span class="skill"><i class="fab fa-linux"></i>Linux</span>
           </div>
         </div>
       </section>
-
       <section id="contact" class="reveal">
-        <h2>Contact</h2>
+        <h2><i class="fas fa-envelope icon"></i>Contact</h2>
         <div class="card contact-grid">
           <div>
-            <p class="muted">Je suis toujours ouvert aux opportunités d'apprentissage, aux stages et aux collaborations. N'hésitez pas à me contacter si vous avez une idée de projet ou une offre d'emploi.</p>
-            <p style="margin-top:1.5rem">✉️ <a href="mailto:sylkinko@gmail.com">sylkinko@gmail.com</a></p>
-            <p>📱 (+229) 01 50 36 91 13</p>
-            <p style="margin-top:1rem">LinkedIn: <a href="https://www.linkedin.com/in/sylv%C3%A8re-kinox-kouffossi-059951340" target="_blank">Sylvère Kinox KOUFFOSSI</a></p>
+            <p class="muted">
+              <i class="fas fa-handshake icon"></i>Je suis toujours ouvert aux opportunités d'apprentissage, aux stages et aux collaborations. N'hésitez pas à me contacter si vous avez une idée de projet ou une offre d'emploi.
+            </p>
+            <p style="margin-top:1.5rem">
+              <i class="fas fa-envelope icon"></i><a href="mailto:sylkinko@gmail.com">sylkinko@gmail.com</a>
+            </p>
+            <p>
+              <i class="fas fa-phone icon"></i>(+229) 01 50 36 91 13
+            </p>
+            <p style="margin-top:1rem">
+              <i class="fab fa-linkedin icon"></i>LinkedIn: <a href="https://www.linkedin.com/in/sylv%C3%A8re-kinox-kouffossi-059951340" target="_blank">Sylvère Kinox KOUFFOSSI</a>
+            </p>
           </div>
           <form id="contactForm" name="contact" netlify>
             <input type="hidden" name="form-name" value="contact" />
@@ -331,24 +351,19 @@
             <input type="email" name="email" placeholder="Votre email" required />
             <textarea name="message" placeholder="Message" required></textarea>
             <div style="margin-top:1rem;display:flex;gap:0.5rem">
-              <button type="submit" class="btn">Envoyer</button>
-              <button type="button" id="clearForm" class="btn secondary">Effacer</button>
+              <button type="submit" class="btn"><i class="fas fa-paper-plane"></i>Envoyer</button>
+              <button type="button" id="clearForm" class="btn secondary"><i class="fas fa-eraser"></i>Effacer</button>
             </div>
           </form>
         </div>
       </section>
     </main>
-
     <footer>
       <p>© <span id="year"></span> Sylvère Kinox KOUFFOSSI — Tous droits réservés.</p>
     </footer>
   </div>
-
   <script>
-    // Set year
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // IntersectionObserver for reveal animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -358,8 +373,6 @@
       });
     }, { threshold: 0.2 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // Clear form function
     document.getElementById('clearForm').addEventListener('click', () => {
       document.getElementById('contactForm').reset();
     });
